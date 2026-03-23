@@ -1,5 +1,5 @@
 services:
-  odoo:
+  odoo-service:
     image: odoo:19.0
     command: odoo -i base
     depends_on:
