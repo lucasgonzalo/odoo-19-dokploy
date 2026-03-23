@@ -51,7 +51,7 @@ This repository contains a Dockerized Odoo 19 setup optimized for deployment on 
     - `POSTGRES_DB`
     - `ODOO_MASTER_PASSWORD`
     - `DOMAIN` (e.g., `odoo.yourdomain.com`)
-5.  **Deploy**: Dokploy will automatically handle the Traefik routing based on the labels in `docker-compose.yml`.
+5.  **Deploy**: Dokploy will automatically handle the Traefik routing and SSL certificates. Ensure you have configured your domain in the **"Domains"** tab of the Dokploy application.
 
 ## Configuration
 
