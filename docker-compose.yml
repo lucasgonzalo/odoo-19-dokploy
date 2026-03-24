@@ -1,7 +1,7 @@
 services:
   odoo-prod:
     image: odoo:19.0
-    command: odoo --no-database-list
+    # command: odoo --no-database-list
     depends_on:
       database:
         condition: service_healthy
