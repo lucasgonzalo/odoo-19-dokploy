@@ -9,7 +9,8 @@ services:
       - HOST=database
       - USER=${POSTGRES_USER}
       - PASSWORD=${POSTGRES_PASSWORD}
-      - MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
+      - ODOO_MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
+      - DB_NAME=${POSTGRES_DB}
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
