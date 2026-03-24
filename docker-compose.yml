@@ -1,7 +1,7 @@
 services:
   odoo-prod:
     image: odoo:19.0
-    command: odoo
+    command: odoo --no-database-list
     depends_on:
       database:
         condition: service_healthy
@@ -12,7 +12,6 @@ services:
       - ODOO_MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
       #- MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
       #- DB_NAME=${POSTGRES_DB} # comment and uncomment to see all databases
-    command: odoo --no-database-list
 
     volumes:
       - odoo-web-data:/var/lib/odoo
