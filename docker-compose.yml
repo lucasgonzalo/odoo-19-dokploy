@@ -12,6 +12,7 @@ services:
       - ODOO_MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
       #- MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
       #- DB_NAME=${POSTGRES_DB} # comment and uncomment to see all databases
+    command: odoo --no-database-list
 
     volumes:
       - odoo-web-data:/var/lib/odoo
