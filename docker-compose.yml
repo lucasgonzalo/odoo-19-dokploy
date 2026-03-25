@@ -1,7 +1,7 @@
 services:
   odoo-prod:
     image: odoo:19.0
-    command: odoo --no-database-list --db-filter=^%d$
+    command: odoo --no-database-list --db-filter=modista #--db-filter=^%d$ this will only show the database that matches de subdomain url ie: modista.multisitio.top will get the modista db
     depends_on:
       database:
         condition: service_healthy
