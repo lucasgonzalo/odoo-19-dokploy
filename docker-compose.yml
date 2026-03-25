@@ -1,7 +1,7 @@
 services:
   odoo-prod:
     image: odoo:19.0
-    command: odoo --no-database-list --db-filter=modista #--db-filter=^%d$ this will only show the database that matches de subdomain url ie: modista.multisitio.top will get the modista db
+    # command: odoo --no-database-list --db-filter=modista #--db-filter=^%d$ this will only show the database that matches de subdomain url ie: modista.multisitio.top will get the modista db
     depends_on:
       database:
         condition: service_healthy
@@ -11,7 +11,7 @@ services:
       - PASSWORD=${POSTGRES_PASSWORD}
       - ODOO_MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
       #- MASTER_PASSWORD=${ODOO_MASTER_PASSWORD}
-      - DB_NAME=${POSTGRES_DB} # comment and uncomment to see all databases
+      # - DB_NAME=${POSTGRES_DB} # comment and uncomment to see all databases
 
     volumes:
       - odoo-web-data:/var/lib/odoo
