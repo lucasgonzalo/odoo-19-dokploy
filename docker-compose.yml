@@ -1,7 +1,7 @@
 services:
   odoo-prod:
     image: odoo:19.0
-    command: odoo --no-database-list -d modista #--db-filter=^%d$ this will only show the database that matches de subdomain url ie: modista.multisitio.top will get the modista db
+    # command: odoo --no-database-list -d modista #--db-filter=^%d$ this will only show the database that matches de subdomain url ie: modista.multisitio.top will get the modista db
     depends_on:
       database:
         condition: service_healthy
@@ -20,7 +20,7 @@ services:
     networks:
       - dokploy-network
     healthcheck:
-      test: ["CMD-SHELL", "python3 -c 'import urllib.request; urllib.request.urlopen(\"http://localhost:8069/web/health\").getcode() == 200'"]
+      test: [ "CMD-SHELL", "python3 -c 'import urllib.request; urllib.request.urlopen(\"http://localhost:8069/web/health\").getcode() == 200'" ]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -39,7 +39,7 @@ services:
     networks:
       - dokploy-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER}" ]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -48,6 +48,7 @@ services:
 volumes:
   odoo-web-data:
   postgres-data:
+
 
 networks:
   dokploy-network:
